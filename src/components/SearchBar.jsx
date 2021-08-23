@@ -1,27 +1,46 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const SearchBar = ({ setSearchTerm }) => {
-  const [newSearchTerm, setNewSearchTerm] = useState('');
+const SearchBar = ({ setSearchTerm, setSearchBy, searchBy }) => {
+  const [newSearchTerm, setNewSearchTerm] = useState("");
 
   return (
     <div>
-      <form onSubmit={(event) => {
-        event.preventDefault()
-        setSearchTerm(newSearchTerm)
-        setNewSearchTerm('')
-      }}>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          setSearchTerm(newSearchTerm);
+          setNewSearchTerm("");
+          console.log(event.target);
+        }}
+      >
         <label className="search-bar">
           <input
             type="text"
+            id="searchBar"
             value={newSearchTerm}
             onChange={(event) => {
               setNewSearchTerm(event.target.value);
             }}
           />
         </label>
-        <button type="submit" >search</button>
+        <label className="search-bar">
+          <select
+            htmlFor="searchBar"
+            value={searchBy}
+            onChange={(event) => {
+              console.log(event.target.value);
+              setSearchBy(event.target.value);
+            }}
+          >
+            <option value="director">Director</option>
+            <option value="title">Title</option>
+            <option value="producer">Producer</option>
+          </select>
+        </label>
+        <button type="submit">search</button>
       </form>
-      <br /><br />
+      <br />
+      <br />
     </div>
   );
 };
