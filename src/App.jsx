@@ -1,5 +1,5 @@
 import "./App.css";
-import SearchingTitle from "./components/SearchingTitle";
+// import SearchingTitle from "./components/SearchingTitle";
 import Header from "./components/Header";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";

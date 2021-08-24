@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TextField, Select, Button } from '@material-ui/core';
 
 const SearchBar = ({ setSearchTerm, setSearchBy, searchBy }) => {
   const [newSearchTerm, setNewSearchTerm] = useState("");
@@ -14,7 +15,7 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy }) => {
         }}
       >
         <label className="search-bar">
-          <input
+          <TextField
             type="text"
             id="searchBar"
             value={newSearchTerm}
@@ -24,7 +25,7 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy }) => {
           />
         </label>
         <label className="search-bar">
-          <select
+          <Select
             htmlFor="searchBar"
             value={searchBy}
             onChange={(event) => {
@@ -35,9 +36,9 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy }) => {
             <option value="director">Director</option>
             <option value="title">Title</option>
             <option value="producer">Producer</option>
-          </select>
+          </Select>
         </label>
-        <button type="submit">search</button>
+        <Button type="submit">search</Button>
       </form>
       <br />
       <br />

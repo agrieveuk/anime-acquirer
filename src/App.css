@@ -28,5 +28,51 @@
   color: #61dafb;
 }
 
+.stars {
+  color: #dadada;
+}
 
+.stars:hover {
+  color: #000000;
+  transition: 400ms ease-in-out;
+}
+
+.ghibli-logo {
+  width: 300px;
+  height: auto;
+}
+
+.tagline {
+  padding-top: 4rem;
+}
+
+.films {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.films li {
+  padding: 3rem;
+  list-style-type: none;
+  width: 150px;
+  background-image: url('images/newPostIt.png');
+  background-repeat: no-repeat;
+  background-size: 230px auto;
+  background-position: 50% 50%;
+}
+
+.results-text{
+  color: #282c34c6;
+}
+
+.results-text:hover {
+  color: #000000;
+  transition: 200ms ease-in-out;
+}
+
+.search-bar {
+  font-family: 'Cormorant Garamond', serif;
+}
 

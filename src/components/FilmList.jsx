@@ -21,13 +21,16 @@ const FilmList = ({ searchTerm, searchBy }) => {
 
   return (
     <div>
-      <ol>
+      <ol className="films">
         {films.map((film) => {
           return (
             <li key="film.id">
-              <h3>{film.title}</h3>
-              <h4>{film.original_title}</h4>
-              <p>{[film.director + " " + film.release_date]}</p>
+              <div className="results-text">
+                <h3>{film.title}</h3>
+                <h4>{film.original_title}</h4>
+                <p>{[film.director + ' ' + film.release_date]}</p>
+              </div>
+              
               <br />
             </li>
           );
