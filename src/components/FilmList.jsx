@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const FilmList = ({ searchTerm, searchBy }) => {
+const FilmList = ({ searchTerm, searchBy, listView }) => {
   const [films, setFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,18 +19,25 @@ const FilmList = ({ searchTerm, searchBy }) => {
     return <p>Finding films...</p>;
   }
 
+  if (films.length === 0) {
+    return <p>Nothing Found</p>;
+  }
+
   return (
     <div>
-      <ol className="films">
+      <ol className={listView ? "films" : "films-post-it"}>
         {films.map((film) => {
           return (
-            <li key="film.id">
+            <li
+              key="film.id"
+              className={listView ? "films-li" : "films-li-post-it"}
+            >
               <div className="results-text">
                 <h3>{film.title}</h3>
                 <h4>{film.original_title}</h4>
-                <p>{[film.director + ' ' + film.release_date]}</p>
+                <p>{[film.director + " " + film.release_date]}</p>
               </div>
-              
+
               <br />
             </li>
           );
