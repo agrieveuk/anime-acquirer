@@ -7,5 +7,3 @@ Styling//
 - potentially rotating japanese text on side of page
 - could implement a button somewhere to imitate changing of pages 
 - options of viewing result ie, blocks or vertical lists
-
-
