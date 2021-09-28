@@ -113,6 +113,10 @@
 	font-family: 'Cormorant Garamond', serif;
 }
 
+.select-search {
+  width: 110px;
+}
+
 .list-container {
 	margin-left: 3em;
 	margin-right: 3em;
