@@ -24,7 +24,7 @@ const FilmList = ({ searchTerm, searchBy, listView }) => {
   }
 
   return (
-    <div>
+    <div className="list-container">
       <ol className={listView ? "films" : "films-post-it"}>
         {films.map((film) => {
           return (
