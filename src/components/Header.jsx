@@ -8,7 +8,7 @@ const Header = () => {
       <h2>
         (ﾉ◕ヮ◕)ﾉ<span className="stars">*:･ﾟ✧</span>
       </h2>
-      <p className="tagline">search for your favourite ghibili film !!</p>
+      <p className="tagline">search for your favourite ghibili film with disney's API !!</p>
     </div>
   );
 };

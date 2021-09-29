@@ -33,7 +33,7 @@
 }
 
 .stars:hover {
-	color: #000000;
+	color: #c20404;
 	transition: 400ms ease-in-out;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .list-view:hover {
-	background-color: rgb(179, 179, 179);
+	background-color: rgb(232, 0, 0);
 	transition: 300ms ease-in-out;
 }
 
@@ -113,12 +113,98 @@
 }
 
 .select-search {
-  width: 110px;
+	width: 110px;
 }
 
 .list-container {
 	margin-left: 3em;
 	margin-right: 3em;
+}
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap,
+.vitem {
+	line-height: 100px;
+	font-size: 2em;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap {
+	position: relative;
+    float: left;
+	overflow: hidden; /* HIDE SCROLL BAR */
+}
+/* (C) TICKER ITEMS */
+.vitem {
+	color: rgb(223, 1, 1);
+	text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove {
+	position: relative;
+}
+@keyframes tickerv {
+	0% {
+		bottom: 0;
+	} /* FIRST ITEM */
+	100% {
+		bottom: 10000px;
+	} /* BACK TO FIRST */
+}
+
+.vmove {
+	animation-name: tickerv;
+	animation-duration: 500s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+.vmove:hover {
+	animation-play-state: paused;
+}
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap-right,
+.vitem-right {
+	line-height: 100px;
+	font-size: 2em;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap-right {
+	position: relative;
+    float: right;
+	overflow: hidden; /* HIDE SCROLL BAR */
+}
+/* (C) TICKER ITEMS */
+.vitem-right {
+	color: rgb(223, 1, 1);
+	text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove-right {
+	position: relative;
+}
+@keyframes tickerv-right {
+	0% {
+		bottom: 0;
+	} /* FIRST ITEM */
+	100% {
+		bottom: 10000px;
+	} /* BACK TO FIRST */
+}
+
+.vmove-right {
+	animation-name: tickerv-right;
+	animation-duration: 500s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+.vmove-right:hover {
+	animation-play-state: paused;
 }
 
 @media only screen and (min-width: 1200px) {
