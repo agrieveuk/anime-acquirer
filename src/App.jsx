@@ -24,7 +24,7 @@ function App() {
 				listView={listView}
 				setListView={setListView}
 			/>
-			<FilmList searchTerm={searchTerm} searchBy={searchBy} listView={listView} />
+			<FilmList searchTerm={searchTerm} searchBy={searchBy} listView={listView} setListView={setListView} />
 		</div>
 	);
 }
