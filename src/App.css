@@ -121,6 +121,11 @@
 	margin-right: 3em;
 }
 
+a {
+	text-decoration: none;
+	color: #282c34c6
+}
+
 /* (A) STANDARD ROW HEIGHT */
 .vwrap,
 .vitem {
@@ -156,7 +161,7 @@
 
 .vmove {
 	animation-name: tickerv;
-	animation-duration: 500s;
+	animation-duration: 750s;
 	animation-iteration-count: infinite;
 	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
 }
@@ -199,7 +204,7 @@
 
 .vmove-right {
 	animation-name: tickerv-right;
-	animation-duration: 500s;
+	animation-duration: 750s;
 	animation-iteration-count: infinite;
 	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
 }

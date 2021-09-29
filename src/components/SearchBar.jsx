@@ -43,13 +43,13 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, listView, setListView
 						setSearchBy(event.target.value);
 					}}
 				>
-					<option label='title' value='title'>
+					<option label='Title' value='title'>
 						Title
 					</option>
-					<option label='director' value='director'>
+					<option label='Director' value='director'>
 						Director
 					</option>
-					<option label='producer' value='producer'>
+					<option label='Producer' value='producer'>
 						Producer
 					</option>
 				</Select>
