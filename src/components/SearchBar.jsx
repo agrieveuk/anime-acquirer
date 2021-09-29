@@ -1,20 +1,21 @@
-import { Input, Select, Button } from '@material-ui/core';
+import { Input, Select, Button, TextButton } from '@material-ui/core';
 import { useState } from 'react';
 
 const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, listView, setListView }) => {
 	const [newSearchTerm, setNewSearchTerm] = useState('');
-	const [listViewName, setListViewName] = useState('Post-It View');
+	const [listViewName, setListViewName] = useState('post-it view');
 
 	const changeListView = () => {
 		setListView((currValue) => {
 			return !currValue;
 		});
-		listViewName === 'List View' ? setListViewName('Post-it View') : setListViewName('List View');
+		listViewName === 'list view' ? setListViewName('post-it view') : setListViewName('list view');
 	};
 
 	return (
 		<div>
-			<form className='search-bar'
+			<form
+				className='search-bar'
 				onSubmit={(event) => {
 					event.preventDefault();
 					setSearchTerm(newSearchTerm);
@@ -25,7 +26,7 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, listView, setListView
 				<Input
 					variant='outlined'
 					type='text'
-          placeholder="'Ponyo'"
+					placeholder="'Ponyo'"
 					id='searchBar'
 					value={newSearchTerm}
 					onChange={(event) => {
@@ -33,7 +34,8 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, listView, setListView
 					}}
 				/>
 
-				<Select className='select-search'
+				<Select
+					className='select-search'
 					htmlFor='searchBar'
 					value={searchBy}
 					onChange={(event) => {
@@ -52,12 +54,14 @@ const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, listView, setListView
 					</option>
 				</Select>
 
-				<Button variant='outlined' size='small' type='submit'>search</Button>
+				<Button variant='outlined' size='small' type='submit'>
+					search
+				</Button>
 			</form>
 			<br />
-			<button className='list-view' onClick={changeListView}>
+			<Button size='small' className='list-view' onClick={changeListView}>
 				{listViewName}
-			</button>
+			</Button>
 			<br />
 		</div>
 	);

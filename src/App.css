@@ -47,15 +47,14 @@
 }
 
 .list-view {
-	background-color: #dadada;
+	display: flex;
+	justify-self: left;
 	border: 1px solid #f0f0f0;
-	border-radius: 15px;
-	float: right;
-	margin-right: 10rem;
+	border-radius: 4px;
 }
 
 .list-view:hover {
-	background-color: darkgray;
+	background-color: rgb(179, 179, 179);
 	transition: 300ms ease-in-out;
 }
 
