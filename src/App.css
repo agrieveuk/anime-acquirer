@@ -1,110 +1,219 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
 .App {
-  font-family: "Cormorant Garamond", serif;
+	font-family: 'Cormorant Garamond', serif;
 }
 
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 .stars {
-  color: #dadada;
+	color: #dadada;
 }
 
 .stars:hover {
-  color: #000000;
-  transition: 400ms ease-in-out;
+	color: #c20404;
+	transition: 400ms ease-in-out;
 }
 
 .ghibli-logo {
-  width: 300px;
-  height: auto;
+	width: 300px;
+	height: auto;
 }
 
 .tagline {
-  padding-top: 4rem;
+	padding-top: 4rem;
 }
 
 .list-view {
-  background-color: #dadada;
-  border: 1px solid #f0f0f0;
-  border-radius: 15px;
-  float: right;
-  margin-right: 70px;
+	display: flex;
+	justify-self: left;
+	border: 1px solid #f0f0f0;
+	border-radius: 4px;
 }
 
 .list-view:hover {
-  background-color: darkgray;
-  transition: 300ms ease-in-out;
+	background-color: rgb(232, 0, 0);
+	transition: 300ms ease-in-out;
 }
 
 .films {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
 }
 
 .films-post-it {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 10px;
 }
 
 .films-li-post-it {
-  padding: 3rem;
-  list-style-type: none;
-  width: 150px;
-  background-image: url("images/newPostIt.png");
-  background-repeat: no-repeat;
-  background-size: 230px auto;
-  background-position: 50% 50%;
+	padding: 3rem;
+	list-style-type: none;
+	width: 150px;
+	background-image: url('images/newPostIt1.png');
+	background-repeat: no-repeat;
+	background-size: 230px auto;
+	background-position: 50% 50%;
+}
+
+.films-li-post-it:hover {
+	padding: 3rem;
+	list-style-type: none;
+	width: 150px;
+	background-image: url('images/newPostIt.png');
+	background-repeat: no-repeat;
+	background-size: 230px auto;
+	background-position: 50% 50%;
 }
 
 .films-li {
-  padding: 0px 0px 30px 0px;
-  list-style-type: none;
-  min-width: 150px;
-  line-height: 1em;
+	padding: 0px 0px 30px 0px;
+	list-style-type: none;
+	min-width: 150px;
+	line-height: 1em;
 }
 
 .results-text {
-  color: #282c34c6;
+	color: #282c34c6;
 }
 
 .results-text:hover {
-  color: #000000;
-  transition: 200ms ease-in-out;
+	color: #000000;
+	transition: 200ms ease-in-out;
 }
 
 .search-bar {
-  font-family: "Cormorant Garamond", serif;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.select-search {
+	width: 110px;
+}
+
+.list-container {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+a {
+	text-decoration: none;
+	color: #282c34c6
+}
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap,
+.vitem {
+	line-height: 100px;
+	font-size: 2em;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap {
+	position: relative;
+    float: left;
+	overflow: hidden; /* HIDE SCROLL BAR */
+}
+/* (C) TICKER ITEMS */
+.vitem {
+	color: rgb(223, 1, 1);
+	text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove {
+	position: relative;
+}
+@keyframes tickerv {
+	0% {
+		bottom: 0;
+	} /* FIRST ITEM */
+	100% {
+		bottom: 10000px;
+	} /* BACK TO FIRST */
+}
+
+.vmove {
+	animation-name: tickerv;
+	animation-duration: 750s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+.vmove:hover {
+	animation-play-state: paused;
+}
+
+/* (A) STANDARD ROW HEIGHT */
+.vwrap-right,
+.vitem-right {
+	line-height: 100px;
+	font-size: 2em;
+}
+
+/* (B) FIXED WRAPPER */
+.vwrap-right {
+	position: relative;
+    float: right;
+	overflow: hidden; /* HIDE SCROLL BAR */
+}
+/* (C) TICKER ITEMS */
+.vitem-right {
+	color: rgb(223, 1, 1);
+	text-align: center;
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM TOP TO BOTTOM */
+/* CHANGE KEYFRAMES IF YOU ADD/REMOVE ITEMS */
+.vmove-right {
+	position: relative;
+}
+@keyframes tickerv-right {
+	0% {
+		bottom: 0;
+	} /* FIRST ITEM */
+	100% {
+		bottom: 10000px;
+	} /* BACK TO FIRST */
+}
+
+.vmove-right {
+	animation-name: tickerv-right;
+	animation-duration: 750s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+.vmove-right:hover {
+	animation-play-state: paused;
 }
 
 @media only screen and (min-width: 1200px) {
-  .films {
-    margin: 0px 100px 0px 100px;
-  }
+	.films {
+		margin: 0px 100px 0px 100px;
+	}
 }

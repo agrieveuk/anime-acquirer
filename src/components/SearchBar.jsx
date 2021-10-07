@@ -1,64 +1,57 @@
-import { useState } from "react";
-import { TextField, Select, Button } from "@material-ui/core";
+import { Input, Select, Button } from '@material-ui/core';
+import { useState } from 'react';
 
-const SearchBar = ({
-  setSearchTerm,
-  setSearchBy,
-  searchBy,
-  listView,
-  setListView,
-}) => {
-  const [newSearchTerm, setNewSearchTerm] = useState("");
+const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, setListView }) => {
+	const [newSearchTerm, setNewSearchTerm] = useState('');
 
-  const changeListView = () => {
-    setListView((currValue) => {
-      return !currValue;
-    });
-  };
+	return (
+		<div>
+			<form
+				className='search-bar'
+				onSubmit={(event) => {
+					event.preventDefault();
+					setSearchTerm(newSearchTerm);
+					setNewSearchTerm('');
+					console.log(event.target);
+				}}
+			>
+				<Input
+					variant='outlined'
+					type='text'
+					placeholder="'Ponyo'"
+					id='searchBar'
+					value={newSearchTerm}
+					onChange={(event) => {
+						setNewSearchTerm(event.target.value);
+					}}
+				/>
 
-  return (
-    <div>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          setSearchTerm(newSearchTerm);
-          setNewSearchTerm("");
-          console.log(event.target);
-        }}
-      >
-        <label className="search-bar">
-          <TextField
-            type="text"
-            id="searchBar"
-            value={newSearchTerm}
-            onChange={(event) => {
-              setNewSearchTerm(event.target.value);
-            }}
-          />
-        </label>
-        <label className="search-bar">
-          <Select
-            htmlFor="searchBar"
-            value={searchBy}
-            onChange={(event) => {
-              console.log(event.target.value);
-              setSearchBy(event.target.value);
-            }}
-          >
-            <option value="director">Director</option>
-            <option value="title">Title</option>
-            <option value="producer">Producer</option>
-          </Select>
-        </label>
-        <Button type="submit">search</Button>
-      </form>
-      <br />
-      <button className="list-view" onClick={changeListView}>
-        List View
-      </button>
-      <br />
-    </div>
-  );
+				<Select
+					className='select-search'
+					htmlFor='searchBar'
+					value={searchBy}
+					onChange={(event) => {
+						console.log(event.target.value);
+						setSearchBy(event.target.value);
+					}}
+				>
+					<option label='Title' value='title'>
+						Title
+					</option>
+					<option label='Director' value='director'>
+						Director
+					</option>
+					<option label='Producer' value='producer'>
+						Producer
+					</option>
+				</Select>
+
+				<Button variant='outlined' size='small' type='submit'>
+					search
+				</Button>
+			</form>
+		</div>
+	);
 };
 
 export default SearchBar;
