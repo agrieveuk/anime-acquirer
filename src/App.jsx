@@ -4,11 +4,12 @@ import Header from "./components/Header";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import FilmList from "./components/FilmList";
+import Graph from "./components/Graph";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("...");
-  const [searchBy, setSearchBy] = useState("Choose");
-  const [listView, setListView] = useState(false);
+  const [searchBy, setSearchBy] = useState("");
+  const [graphView, setGraphView] = useState(true);
 
   return (
     <div className="App">
@@ -17,14 +18,13 @@ function App() {
       <SearchBar
         setSearchTerm={setSearchTerm}
         setSearchBy={setSearchBy}
-        listView={listView}
-        setListView={setListView}
+        setGraphView={setGraphView}
       />
-      <FilmList
-        searchTerm={searchTerm}
-        searchBy={searchBy}
-        listView={listView}
-      />
+      {graphView ? (
+        <Graph />
+      ) : (
+        <FilmList searchTerm={searchTerm} searchBy={searchBy} />
+      )}
     </div>
   );
 }

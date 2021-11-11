@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 
-const FilmList = ({ searchTerm, searchBy, listView }) => {
+const FilmList = ({ searchTerm, searchBy }) => {
   const [films, setFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [listView, setListView] = useState(false);
+
+  const changeListView = () => {
+    setListView((currValue) => {
+      return !currValue;
+    });
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -24,7 +31,12 @@ const FilmList = ({ searchTerm, searchBy, listView }) => {
   }
 
   return (
-    <div>
+    <section>
+      <div className="button-container">
+        <button className="list-view" onClick={changeListView}>
+          List View
+        </button>
+      </div>
       <ol className={listView ? "films" : "films-post-it"}>
         {films.map((film) => {
           return (
@@ -43,7 +55,7 @@ const FilmList = ({ searchTerm, searchBy, listView }) => {
           );
         })}
       </ol>
-    </div>
+    </section>
   );
 };
 

@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { TextField, Select, Button } from "@material-ui/core";
 
-const SearchBar = ({
-  setSearchTerm,
-  setSearchBy,
-  searchBy,
-  listView,
-  setListView,
-}) => {
+const SearchBar = ({ setSearchTerm, setSearchBy, searchBy, setGraphView }) => {
   const [newSearchTerm, setNewSearchTerm] = useState("");
 
-  const changeListView = () => {
-    setListView((currValue) => {
+  const toggleGraph = () => {
+    setGraphView((currValue) => {
       return !currValue;
     });
   };
@@ -52,10 +46,11 @@ const SearchBar = ({
         </label>
         <Button type="submit">search</Button>
       </form>
-      <br />
-      <button className="list-view" onClick={changeListView}>
-        List View
-      </button>
+      <div className="button-container">
+        <button className="graph-button" onClick={toggleGraph}>
+          V i s u a l i s e
+        </button>
+      </div>
       <br />
     </div>
   );
